@@ -148,3 +148,16 @@ extension UIImage {
         return animatedImage
     }
 }
+
+
+#Preview(body: {
+    Color.red.frame(width: 40, height: 40)
+        .mask {
+            ProgressShape(progress: 1, startDegress: 0, endDegress: 15, clockwise: false)
+                .stroke(.yellow, style: .init(lineWidth: 40, lineCap: .square, lineJoin: .miter))
+                .frame(width: 200, height: 200)
+                .clockHandRotationEffect(period: .custom(1))
+                .offset(x: 0, y: 100)
+        }
+    
+})
